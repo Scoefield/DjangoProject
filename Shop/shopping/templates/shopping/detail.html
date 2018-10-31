@@ -1,0 +1,16 @@
+{% extends "shopping/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>{{ gd_detail.name }}</h2>
+    <p>{{ gd_detail.disc }}</p>
+    <img src="{{ gd_detail.photo.url }}" alt="{{ gd_detail.name }}">
+    <h3>{{ gd_detail.price }}元</h3>
+</body>
+</html>

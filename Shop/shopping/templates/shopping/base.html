@@ -1,10 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-hans">
 <head>
     <meta charset="UTF-8">
-    <title>Base</title>
+    <meta name="keywords" content="{% block keyword %}小米8,小米,小米MIX25,手机{% endblock keyword %}">
+    <meta name="description" content="{% block webdescription %}这是小米手机商城页面的克隆{% endblock webdescription %}">
+    <title>{% block webtitle %}手机商城{% endblock webtitle %}</title>
 </head>
 <body>
+
+{#    页眉#}
+    {% include "shopping/header.html" %}
+{#    导航栏#}
+    {% include "shopping/nav.html" %}
+
+    <main>
+        {% block bodys %}
+            这是网页的主题部分
+        {% endblock bodys %}
+    </main>
+
+{#    页脚#}
+    {% include "shopping/footer.html" %}
 
 </body>
 </html>

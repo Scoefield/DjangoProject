@@ -1,0 +1,9 @@
+<nav>
+    <a href="{% url 'shopping:home' %}">所有商品</a>
+
+        {% for phone in alltypes %}
+            <a href="{% url 'shopping:single_web' phone.id %}">{{ phone.name }}</a>
+        {% endfor %}
+
+    <a href="#">购物车</a>
+</nav>
