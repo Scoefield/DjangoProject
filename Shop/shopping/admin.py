@@ -14,8 +14,8 @@ admin.site.register(models.ShopList, ShopListAdmin)
 
 class ProdListAdmin(admin.ModelAdmin):
     list_display = ['name', 'photo', 'price', 'typer', 'having', 'havup', 'creatime', 'moditime']
+    list_editable = ['price', 'typer', 'having', 'havup']
     list_per_page = 6
-    # list_editable = ('name', 'price', 'typer', 'having')
 
 
 admin.site.register(models.ProdList, ProdListAdmin)
