@@ -14,7 +14,7 @@
             <h2>{{ types.name }}</h2>
             <img src="{{ types.photo.url }}" alt="{{ types.name }}">
             {% for good in goods %}
-                <h3><a href="{% url 'shopping:good_detail' good.id %}">{{ good.name }}</a></h3>
+                <h3><a href="{% url 'shopping:good_detail' types.id good.id %}">{{ good.name }}</a></h3>
                 <p>{{ good.disc }}</p>
                 <img src="{{ good.photo.url }}" alt="{{ good.name }}">
                 <h4>{{ good.price }}元</h4>

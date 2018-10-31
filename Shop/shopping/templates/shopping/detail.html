@@ -5,12 +5,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="keywords" content="{% block keyword %}{{ gd_detail.name }}{% endblock keyword %}">
+    <meta name="description" content="{% block webdescription %}{{ gd_detail.disc }}{% endblock webdescription %}">
+    <title>{% block webtitle %}立即购买-手机商城{% endblock webtitle %}</title>
 </head>
 <body>
-    <h2>{{ gd_detail.name }}</h2>
-    <p>{{ gd_detail.disc }}</p>
-    <img src="{{ gd_detail.photo.url }}" alt="{{ gd_detail.name }}">
-    <h3>{{ gd_detail.price }}元</h3>
+    {% block bodys %}
+        <h2>{{ gd_detail.name }}</h2>
+        <p>{{ gd_detail.disc }}</p>
+        <img src="{{ gd_detail.photo.url }}" alt="{{ gd_detail.name }}">
+        {% if gd_detail.having > 0 %}
+            <p>库存：{{ gd_detail.having }}</p>
+        {% else %}
+            <p>暂时缺货</p>
+        {% endif %}
+        <h3>{{ gd_detail.price }}元</h3>
+    {% endblock %}
 </body>
 </html>

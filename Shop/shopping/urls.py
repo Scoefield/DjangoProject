@@ -13,5 +13,5 @@ app_name = 'shopping'
 urlpatterns = [
     path('', views.home, name='home'),
     path('<phone_id>/', views.single_web, name='single_web'),
-    path('<good_id>/', views.good_detail, name='good_detail')
+    path('<phone_id>/<good_id>/', views.good_detail, name='good_detail')
 ]
